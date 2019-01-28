@@ -6,8 +6,89 @@
     Find word with the longest characters
 */
 
+let num = 6
+let res
+for(let x = 0; x < 10; x++){
+    res = ''
+    for(let y = 10; y-x > 0; y--){
+        res += ' '
+    }
+    for(let z = 1; z < x; z++){
+            res += '* ' 
+    }
+    console.log(res)
+}
 
+let arr = [[2,12], [3,27], [5,15]]
+let sum = 0;
+
+arr.forEach(function(arr){
+    arr.forEach(function(el){
+        sum += el
+    })
+})
+console.log(sum)
   
+
+let sampleData = {
+    page: 1,
+    per_page: 3,
+    total: 12,
+    total_pages: 4,
+    people: [
+        {
+            id: 1,
+            name: "Suliatu Moji",
+            year: 2000,
+            color: "#98B2D1",
+            pantone_value: "15-4020"
+        },
+        {
+            "id": 2,
+            "name": "Maleek Berry",
+            "year": 2001,
+            "color": "#C74375",
+            "pantone_value": "17-2031"
+        },
+        {
+            "id": 3,
+            "name": "Khalid Mustafar",
+            "year": 2012,
+            "color": "#BF1932",
+            "pantone_value": "19-1664"
+        },
+        {
+            "id": 4,
+            "name": "Jaafar Abdul",
+            "year": 2001,
+            "color": "#C74375",
+            "pantone_value": "17-2031"
+        },
+        {
+            "id": 5,
+            "name": "Moheed Reema",
+            "year": 2021,
+            "color": "#C74375",
+            "pantone_value": "17-2031"
+        }
+    ]
+
+    
+}
+sampleData.people.forEach(function(el){
+    console.log(`Name: ${el.name}, Year: ${el.year}`)
+})
+console.log()
+sampleData.people.forEach(function(el){
+    console.log(`Name: ${el.name}, Year: ${el.year + 20}`)
+})
+// for(let i =0; i < people.length; i++){
+//     console.log(`Name: ${people[i].name}, Year: ${people[i].year}`)
+// }
+// console.log()
+// for(let i =0; i < people.length; i++){
+//     console.log(`Name: ${people[i].name}, Year: ${people[i].year + 20}`)
+// }
 exports.longestWord = function(){
     let words = [ "mystery", "brother",
         "aviator", "crocodile",
