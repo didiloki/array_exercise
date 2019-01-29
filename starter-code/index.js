@@ -17,7 +17,17 @@ exports.longestWord = function(){
     let result 
     //write your code here
 
+    let max = 0;
 
+    words.forEach(function(el){
+        if(el.length > max){
+            max = el.length;
+        }
+    });
+
+    result = words.filter(function(el){
+        return el.length === max
+    })
 
     return result
 }
@@ -35,7 +45,9 @@ Calculate the product of the following array:
 exports.productArray = function(){
     var numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
     //write code here
-
+    result = numbers.reduce(function(total, num){
+        return total * num
+    })
 
     //end code here
     return result
@@ -64,8 +76,12 @@ exports.averageWords = function(){
 
     let result = 0
     //write codes here
+    let avg = 0;
 
-
+    words.forEach(function(el){
+        avg += el.length;
+    })
+    result = (avg) / (words.length)
     //end code here
     return result
 }
@@ -104,7 +120,9 @@ exports.uniquifyArray = function(){
         "bring"
       ];
     // Your code here
-
+    result = words.filter(function(el,index, words){
+        return words.indexOf(el) === index
+    })
     return result
   }
 
@@ -139,8 +157,19 @@ var matrix = [
 ];
 
     //code here
+    let max = 0;
+    
+    matrix.forEach(function(el){
+        let sum = 0;
+        el.forEach(function(el2){
+            sum += el2;
+        })
+        if(sum > max){
+            max = sum;
+        }
+    })
 
-
+    result = max;
 
     //end code here
 
