@@ -13,14 +13,21 @@ exports.longestWord = function(){
         "aviator", "crocodile",
         "pearl","orchard", "crackpot"
         ];
-
+        
     let result 
     //write your code here
-
-
-
+    maxLengthIndex = 0
+    max = words[0].length
+    for(i = 1; i < words.length; i++){
+        if( words[i].length > max ){
+            max = words[i].length
+            maxLengthIndex = i
+        }
+    }
+    result = words[maxLengthIndex]
     return result
 }
+
 
 
 
@@ -32,12 +39,18 @@ Semantically reduce is the best method to use for this, but you can use any loop
 Calculate the product of the following array:
 
 */
+
 exports.productArray = function(){
     var numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
     //write code here
-
-
-    //end code here
+    let sum = 1
+    numbers.forEach(function(el){
+    
+        sum *= el
+     })
+    
+    result = sum
+     
     return result
 }
 
@@ -62,10 +75,13 @@ exports.averageWords = function(){
         "palace"
     ];
 
-    let result = 0
+    let result
     //write codes here
-
-
+    let sum = 0
+    for(i = 0; i < words.length; i++){
+        sum += words[i].length
+    }
+    result = (sum/words.length);
     //end code here
     return result
 }
@@ -104,8 +120,23 @@ exports.uniquifyArray = function(){
         "bring"
       ];
     // Your code here
-
+    
+    // for(i = 0; i < words.length; i++){
+    //     // console.log(words.indexOf(words[i], i+1))
+    //     if(words.indexOf(words[i], i+1) > 0 ){
+            
+    //         words.splice(words.indexOf(words[i], i+1))
+            
+            
+    //     }
+    // }
+    let unique = (words) => words.filter((v,i) => words.indexOf(v) === i)
+       result = unique(words);
+        // result = words
+    
+      
     return result
+    // console.log(result);
   }
 
 //EXTRA WORK
@@ -139,10 +170,29 @@ var matrix = [
 ];
 
     //code here
-
-
-
+    let matrixArray = []
+    let sum = 0
+    for(i = 0; i < matrix.length; i++){
+        
+        matrix[i].forEach(function(el){
+            sum += el
+        })
+        matrixArray.push(sum)
+        sum = 0
+    }
+    // console.log(matrixArray)
+    let maxArray = matrixArray[0]
+    let maxIndex = 0
+    for(i = 1; i < matrixArray.length; i++){
+        
+        if(matrixArray[i] > maxArray){
+            maxArray = matrixArray[i];
+            maxIndex = i;
+        }
+    }
+    result = matrixArray[maxIndex]
+    // console.log(result)
     //end code here
-
+    
     return result
 }
