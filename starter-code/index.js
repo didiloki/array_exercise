@@ -13,11 +13,18 @@ exports.longestWord = function(){
         "aviator", "crocodile",
         "pearl","orchard", "crackpot"
         ];
-
-    let result 
+    
+    let result
     //write your code here
+let longestWord = 0
+    for(i=0; i < words.length; i++){
 
+        if(longestWord < words[i].length){
+            longestWord = words[i].length
+            result = words[i]
+        }
 
+    }
 
     return result
 }
@@ -32,11 +39,18 @@ Semantically reduce is the best method to use for this, but you can use any loop
 Calculate the product of the following array:
 
 */
+
+
 exports.productArray = function(){
     var numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
     //write code here
+let result = 1
 
+    for(let i=0; i < numbers.length ; i++){
+        result*=numbers[i]
 
+    }
+ 
     //end code here
     return result
 }
@@ -63,10 +77,13 @@ exports.averageWords = function(){
     ];
 
     let result = 0
+    let avg 
     //write codes here
-
-
+    avg = words.join('').length / words.length     
+    console.log(avg)
+    result = avg
     //end code here
+
     return result
 }
 
@@ -104,7 +121,16 @@ exports.uniquifyArray = function(){
         "bring"
       ];
     // Your code here
+    let newArr = []
 
+    for(i=0 ; i < words.length ; i ++){
+    if(newArr.indexOf(words[i]) == -1 ){
+        newArr.push(words[i])
+    }
+};
+
+
+    result=newArr
     return result
   }
 
@@ -140,9 +166,22 @@ var matrix = [
 
     //code here
 
-
+    let Gsum =0
+    for(let i =0 ; i<matrix.length ; i++){
+      let sum = 0
+      
+      for(let x =0 ; x<matrix[i].length ; x++){
+  
+      
+      sum += matrix[i][x]
+          if(sum>Gsum){
+              Gsum=sum
+          }
+  
+      }
+      }
 
     //end code here
-
+result=Gsum
     return result
 }
