@@ -14,11 +14,13 @@ exports.longestWord = function(){
         "pearl","orchard", "crackpot"
         ];
 
-    let result 
     //write your code here
-
-
-
+    let result = words[0] ;
+    for(let i = 1 ; i < words.length ; i++){
+      if(words[i].length > result.length){
+            result = words[i];
+        }
+    }
     return result
 }
 
@@ -35,8 +37,10 @@ Calculate the product of the following array:
 exports.productArray = function(){
     var numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
     //write code here
-
-
+    let result = numbers[0];
+    for(let i = 1 ; i < numbers.length ; i++){
+        result *= numbers[i];
+    }
     //end code here
     return result
 }
@@ -64,7 +68,10 @@ exports.averageWords = function(){
 
     let result = 0
     //write codes here
-
+    words.forEach(function(el){
+        result += el.length
+    })
+    result = result / words.length;
 
     //end code here
     return result
@@ -72,7 +79,8 @@ exports.averageWords = function(){
 
 /*
 
-Take the following array, remove the duplicates, and return a new array. You're more than likely going to want to check out the indexOf function.
+Take the following array, remove the duplicates,
+ and return a new array. You're more than likely going to want to check out the indexOf function.
 
 var words = [
   "crab",
@@ -104,7 +112,16 @@ exports.uniquifyArray = function(){
         "bring"
       ];
     // Your code here
-
+    let arr = new Array;
+    words.forEach(function(el){
+        for(let i = 0 ; i < arr.length ; i++){
+            if(arr[i] === el){
+                return;
+            }
+        }
+        arr.push(el);
+    })
+    let result = arr;
     return result
   }
 
@@ -139,10 +156,18 @@ var matrix = [
 ];
 
     //code here
+    let gre = 0;
+    let sum = 0;
+    matrix.forEach(function(el){
+            sum = 0;
+            for(let i = 0 ; i < el.length ; i++){
+                sum += el[i];
+            }
+            if(sum > gre){
+                gre = sum;
+            }
 
-
-
+    })
     //end code here
-
-    return result
+    return result = gre;
 }
