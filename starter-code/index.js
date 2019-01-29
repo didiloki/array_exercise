@@ -13,15 +13,42 @@ exports.longestWord = function(){
         "aviator", "crocodile",
         "pearl","orchard", "crackpot"
         ];
-
-    let result 
+        let result 
     //write your code here
-
-
+    let word_i
+    let word_length=0
+    
+    for(let i=0;i < words.length;i++){
+        if (words[i].length>word_length){
+            word_length=words[i].length
+            word_i=i
+        }
+    }
+        
+        
+    result=words[word_i]
 
     return result
 }
 
+/*let words = [ "mystery", "brother",
+        "aviator", "crocodile",
+        "pearl","orchard", "crackpot"
+        ];
+        let result 
+    //write your code here
+let word_i
+let word_length=0
+
+for(let i=0;i < words.length;i++){
+    if (words[i].length>word_length){
+        word_length=words[i].length
+        word_i=i
+    }
+}   
+result=words[word_i]
+
+console.log(result)*/
 
 
 /*
@@ -64,15 +91,42 @@ exports.averageWords = function(){
 
     let result = 0
     //write codes here
-
+    let sum=0
+for(let i=0;i<words.length;i++){
+sum+=words[i].length
+}
+result=sum/words.length
 
     //end code here
     return result
 }
 
+/*let words = [
+    "seat",
+    "correspond",
+    "linen",
+    "motif",
+    "hole",
+    "smell",
+    "smart",
+    "chaos",
+    "fuel",
+    "palace"
+];
+
+let result = 0
+//write codes here
+let sum=0
+for(let i=0;i<words.length;i++){
+sum+=words[i].length
+}
+result=sum/words.length
+console.log(result)*/
 /*
 
-Take the following array, remove the duplicates, and return a new array. You're more than likely going to want to check out the indexOf function.
+Take the following array, remove the duplicates, 
+and return a new array. You're more than likely 
+going to want to check out the indexOf function.
 
 var words = [
   "crab",
@@ -103,10 +157,53 @@ exports.uniquifyArray = function(){
         "simple",
         "bring"
       ];
+      let result
     // Your code here
+let new_words= new Array()
+let x_words
+let  test =true
+let test2
+for(let i=0;i<words.length;i++){
+    test =true
+    for (let x=0;x<new_words.length;x++){   
+if (new_words[x]==words[i]){test= false}
 
+  }
+      if(test) {new_words.push(words[i])}
+}
+result=new_words
     return result
   }
+
+
+ let words = [
+    "crab",
+    "poison",
+    "contagious",
+    "simple",
+    "bring",
+    "sharp",
+    "playground",
+    "poison",
+    "communion",
+    "simple",
+    "bring"
+  ];
+// Your code here
+let new_words= new Array()
+let x_words
+let  test =true
+let test2
+for(let i=0;i<words.length;i++){
+    test =true
+    for (let x=0;x<new_words.length;x++){   
+if (new_words[x]==words[i]){test= false}
+
+  }
+      if(test) {new_words.push(words[i])}
+}
+let result =new_words
+console.log(result)
 
 //EXTRA WORK
 /*
