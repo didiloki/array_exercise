@@ -13,13 +13,11 @@ exports.longestWord = function(){
         "aviator", "crocodile",
         "pearl","orchard", "crackpot"
         ];
-
-    let result 
     //write your code here
 
-
-
-    return result
+    let result 
+    result = words.sort(function (a,b) {return b.length > a.length;});
+    return result[0];
 }
 
 
@@ -35,10 +33,15 @@ Calculate the product of the following array:
 exports.productArray = function(){
     var numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
     //write code here
-
-
-    //end code here
+    
+    let result = 1
+    for(let i = 0; i < numbers.length; i++){
+        result = result * numbers[i];
+    }
+    console.log(result)
+    
     return result
+    //end code here
 }
 
 
@@ -62,13 +65,20 @@ exports.averageWords = function(){
         "palace"
     ];
 
-    let result = 0
     //write codes here
-
-
-    //end code here
+    let result
+    let chars = 0;
+    
+    words.forEach( (el) => {
+    chars += el.length;
+    });
+    result = chars / words.length;
     return result
-}
+//end code here
+}    
+
+
+
 
 /*
 
@@ -105,6 +115,7 @@ exports.uniquifyArray = function(){
       ];
     // Your code here
 
+    let result = words.filter((x,y) => words.indexOf(x) === y) 
     return result
   }
 
