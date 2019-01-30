@@ -1,8 +1,4 @@
 /*
-    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
-*/
-
-/*
     Find word with the longest characters
 */
 exports.longestWord = function () {
@@ -22,8 +18,6 @@ exports.longestWord = function () {
     return result
 }
 
-
-
 /*
 Calculating the product is as simple as iterating over an array and adding each of the elements together.
 Semantically reduce is the best method to use for this, but you can use any loop we've discussed so far.
@@ -36,7 +30,6 @@ exports.productArray = function () {
     });
     return result;
 }
-
 
 /*
 Array of Strings
@@ -65,24 +58,9 @@ exports.averageWords = function () {
     return result
 }
 
-// /*
+
 
 // Take the following array, remove the duplicates, and return a new array. You're more than likely going to want to check out the indexOf function.
-
-// var words = [
-//   "crab",
-//   "poison",
-//   "contagious",
-//   "simple",
-//   "bring",
-//   "sharp",
-//   "playground",
-//   "poison",
-//   "communion",
-//   "simple",
-//   "bring"
-// ];
-
 
 exports.uniquifyArray = function () {
     let words = [
@@ -102,7 +80,7 @@ exports.uniquifyArray = function () {
     return result
 }
 
-// //EXTRA WORK
+
 // /*
 //     Bonus Quest
 // In the 20×20 grid below; What is the greatest sum of element of the array?
