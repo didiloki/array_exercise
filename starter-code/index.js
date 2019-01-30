@@ -4,6 +4,7 @@
 
 /*
     Find word with the longest characters
+
 */
 
 
@@ -15,11 +16,47 @@ exports.longestWord = function(){
         ];
 
     let result 
+/* 
+var longest;
+        for(let i=0 ; i< arr.length;i++){
+            if(arr[i].length > lg){
+                lg = arr[i].length;
+                longest = arr[i];
+            }
+        }
+        return longest;
+    }
+    longestString(words);
+
+
+    # 2 
+    function logestword(str){
+        var word = str.split(" ");
+        var longest= "";
+
+        for (var word of words){
+            if (word.length>longest.length){
+                longest = word;
+            }
+
+        }
+        retutn longest ;
+    }
+*/
     //write your code here
-
-
-
+    var longest;
+        for(let i=0 ; i< arr.length;i++){
+            if(arr[i].length > lg){
+                lg = arr[i].length;
+                longest = arr[i];
+            }
+        }
+        return longest;
+    
+    
+   
     return result
+
 }
 
 
@@ -35,8 +72,11 @@ Calculate the product of the following array:
 exports.productArray = function(){
     var numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
     //write code here
-
-
+    result = numbers.reduce(function (a, b) {
+        return a * b;
+    }, 1);
+    
+    console.log(result)
     //end code here
     return result
 }
@@ -64,7 +104,11 @@ exports.averageWords = function(){
 
     let result = 0
     //write codes here
-
+let x = words.split('').join('');
+for (x[i]=0; x<words.length; x[i]++){
+    sum += x
+}
+   var result= sum / words.length
 
     //end code here
     return result
@@ -104,7 +148,14 @@ exports.uniquifyArray = function(){
         "bring"
       ];
     // Your code here
-
+    let result = [];
+    let el =  words.length;
+  for (let i =0 ; i < el; i++)
+    if(result.indexOf(words[i]) === -1){
+    result.push(words[i]);
+    }
+  
+  console.log(result)
     return result
   }
 
@@ -139,7 +190,12 @@ var matrix = [
 ];
 
     //code here
-
+let result =0
+matrix.forEach(function(el){
+    el.forEach(function(ele){
+        result += ele
+    })
+})
 
 
     //end code here
