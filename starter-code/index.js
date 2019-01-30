@@ -6,22 +6,20 @@
     Find word with the longest characters
 */
 
-
-  
-exports.longestWord = function(){
-    let words = [ "mystery", "brother",
-        "aviator", "crocodile",
-        "pearl","orchard", "crackpot"
-        ];
-
-    let result 
-    //write your code here
-
-
-
-    return result
-}
-
+//exports.longestWord = function(){
+        let res =0;
+        let words = [ "mystery", "brother","aviator", "crocodile","pearl","orchard", "crackpot"];
+       
+        for (let i = 0 ; i< words.length ; i ++){
+        //res = words[i].length;
+       
+        if (words[i].length > res){
+        res=words[i]
+        }
+        }
+        console.log(res)
+    //return res
+  //}
 
 
 /*
@@ -32,14 +30,18 @@ Semantically reduce is the best method to use for this, but you can use any loop
 Calculate the product of the following array:
 
 */
-exports.productArray = function(){
+//exports.productArray = function(){
     var numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
-    //write code here
+    var result =1;
 
+    for (let i=0; i<numbers.length; i++){
+        result = result * numbers[i]
+    }
+        console.log(result)
 
-    //end code here
-    return result
-}
+    
+  //  return result
+//}
 
 
 /*
@@ -48,7 +50,7 @@ Write code to calculate the average length of the strings inside of the followin
 
 */
 
-exports.averageWords = function(){
+//exports.averageWords = function(){
     let words = [
         "seat",
         "correspond",
@@ -61,18 +63,21 @@ exports.averageWords = function(){
         "fuel",
         "palace"
     ];
-
-    let result = 0
-    //write codes here
-
-
-    //end code here
-    return result
-}
+    
+    var result = 0;
+    for (let i=0; i<words.length; i++){
+        result = result + words[i].length
+    }
+    result = result / words.length
+    console.log(result)
+    
+  //  return result
+//}
 
 /*
 
-Take the following array, remove the duplicates, and return a new array. You're more than likely going to want to check out the indexOf function.
+Take the following array, remove the duplicates, and return a new array. 
+You're more than likely going to want to check out the indexOf function.
 
 var words = [
   "crab",
@@ -89,7 +94,7 @@ var words = [
 ];
 
 */
-exports.uniquifyArray = function(){
+//exports.uniquifyArray = function(){
     let words = [
         "crab",
         "poison",
@@ -103,10 +108,15 @@ exports.uniquifyArray = function(){
         "simple",
         "bring"
       ];
-    // Your code here
 
-    return result
-  }
+      let res;
+      for (let i=0; i<words.length; i++){
+          for (let j=0; words[i].length;j++){
+          if (words[i].indexOf(j) == words[i+1].indexOf(j)
+          }   
+      }
+   // return result
+ // }
 
 //EXTRA WORK
 /*
