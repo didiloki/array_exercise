@@ -3,6 +3,7 @@
 */
 
 /*
+bashair almusharraf 
     Find word with the longest characters
 */
 
@@ -17,7 +18,15 @@ exports.longestWord = function(){
     let result 
     //write your code here
 
+    var lgth = 0;
 
+
+for(var i=0; i < words.length; i++){
+    if(words[i].length > lgth){
+        var lgth = words[i].length;
+        result = words[i];
+    }      
+} 
 
     return result
 }
@@ -33,13 +42,15 @@ Calculate the product of the following array:
 
 */
 exports.productArray = function(){
+    var result=0
     var numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
-    //write code here
-
-
-    //end code here
-    return result
+    var sum = 1;
+    for (var i = 0; i < numbers.length; i++) {
+        sum = sum * numbers[i];
+    }
+    return sum;
 }
+
 
 
 /*
@@ -65,14 +76,19 @@ exports.averageWords = function(){
     let result = 0
     //write codes here
 
-
+    var total = 0;
+    for(var i = 0; i < words.length; i++){
+        total+=words[i].length;
+    }
+    result = total/words.length;
     //end code here
     return result
 }
 
 /*
 
-Take the following array, remove the duplicates, and return a new array. You're more than likely going to want to check out the indexOf function.
+Take the following array, remove the duplicates, and return a new array. 
+You're more than likely going to want to check out the indexOf function.
 
 var words = [
   "crab",
@@ -104,8 +120,12 @@ exports.uniquifyArray = function(){
         "bring"
       ];
     // Your code here
-
-    return result
+    var uniq = words.reduce(function(a,b){
+        if (a.indexOf(b) < 0 ) a.push(b);
+        return a;
+      },[]);
+    return words.reduce(function(a,b){if(a.indexOf(b)<0)a.push(b);return a;},[]);
+    
   }
 
 //EXTRA WORK
@@ -139,10 +159,30 @@ var matrix = [
 ];
 
     //code here
-
-
-
+    var ind=0
+      var sums=0
+      var res=0
+      for (var i = 0; i < 20; i++) {
+          for (var j = 0; j < 20; j++) {
+              sums += matrix[i][j];
+            
+      }
+      console.log(sums)
+      if (i==0){
+          ind=sums
+         
+      }else{
+     if ( ind > sums){
+         res = ind
+     }
+     else{
+      res = sums
+      ind= res
+      
+     }}
+     sums=0
+  }
     //end code here
 
-    return result
+    return res
 }
