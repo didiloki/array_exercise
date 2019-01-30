@@ -15,12 +15,19 @@ exports.longestWord = function(){
         ];
 
     let result 
-    //write your code here
-
+    var size = 0;
+    for(var i=0; i < words.length; i++){
+    if(words[i].length > size){
+        var size= words[i].length;
+        result= words[i];
+    }      
+} 
 
 
     return result
 }
+
+
 
 
 
@@ -35,7 +42,12 @@ Calculate the product of the following array:
 exports.productArray = function(){
     var numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
     //write code here
-
+    let result=1
+    for(var i=0; i < numbers.length; i++){
+    console.log(numbers[i])
+       result= numbers[i]*result; 
+    } 
+     console.log(result) 
 
     //end code here
     return result
@@ -64,7 +76,11 @@ exports.averageWords = function(){
 
     let result = 0
     //write codes here
-
+    for(var i=0; i < words.length; i++){
+    
+        result+= words[i].length 
+     }
+     result=result/words.length
 
     //end code here
     return result
@@ -104,7 +120,23 @@ exports.uniquifyArray = function(){
         "bring"
       ];
     // Your code here
+    let result =[]
 
+    //write codes here
+    for(var i=0; i < words.length; i++){
+        let uniqu = 0
+        for(var y=0; y < words.length; y++){
+            if(i != y )
+            {  
+              if(words[i] == words[y])
+              {uniqu=1}  
+            }
+        }
+          if(uniqu == 0)
+        {result.push(words[i]) 
+     }
+    }
+    
     return result
   }
 
@@ -138,11 +170,23 @@ var matrix = [
   [01,70,54,71,83,51,54,69,16,92,33,48,61,43,52,01,89,19,67,48],
 ];
 
-    //code here
+var total=[]
+matrix.forEach(function(elem){
+  var sum=0;
+elem.forEach(function (elem2){
 
+  sum +=elem2
+  
+})
+total.push(sum)
 
+})
 
-    //end code here
+var result = 0;   
+for (i = 0; i < total.length; i++) 
+{if (total[i] > result) 
+{result = total[i]}
+}
 
     return result
 }
