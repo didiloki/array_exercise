@@ -7,22 +7,28 @@
 */
 
 
-  
+
 exports.longestWord = function(){
     let words = [ "mystery", "brother",
         "aviator", "crocodile",
         "pearl","orchard", "crackpot"
         ];
 
-    let result 
+    let result;
     //write your code here
+    var max_length = 0;
+    words.forEach(element => {
+        if (max_length <element.length){
+            max_length = element.length;
+            result = element;
+        }
+        
+    });
+    console.log(result);
 
 
-
-    return result
+    return result;
 }
-
-
 
 /*
 Calculating the product is as simple as iterating over an array and adding each of the elements together.
@@ -35,11 +41,17 @@ Calculate the product of the following array:
 exports.productArray = function(){
     var numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
     //write code here
-
-
+    var result = 1;
+    numbers.forEach(element =>{
+        result *= element;
+    });
+    console.log(result)
+    
     //end code here
-    return result
+    return result;
 }
+
+
 
 
 /*
@@ -62,13 +74,20 @@ exports.averageWords = function(){
         "palace"
     ];
 
-    let result = 0
-    //write codes here
+    let result  = 0;
+    //write your code here
+    var sum = 0;
+    words.forEach(element => {
+        sum += element.length;
+    });
+    result = sum / words.length;
+    console.log(result);
 
 
     //end code here
-    return result
+    return result;
 }
+
 
 /*
 
@@ -104,9 +123,18 @@ exports.uniquifyArray = function(){
         "bring"
       ];
     // Your code here
+    for(let i =0; i< words.length; i++){
+        for(let j = i+1; j< words.length; j++){
+            if(words[i] === words[j])
+            {words.splice(j,1); }
+        }
+    }
+    console.log(words)
 
-    return result
+    return words
   }
+
+
 
 //EXTRA WORK
 /*
@@ -137,10 +165,21 @@ var matrix = [
   [20,73,35,29,78,31,90,01,74,31,49,71,48,86,81,16,23,57,05,54],
   [01,70,54,71,83,51,54,69,16,92,33,48,61,43,52,01,89,19,67,48],
 ];
-
     //code here
 
+    var result = 0;
+    var sum = 0;
 
+    matrix.forEach(element=>{
+        element.forEach(value=>{
+            sum += value;
+        });
+        if(sum > result){
+            result = sum;
+        }
+        sum = 0;
+    });
+    console.log(result)
 
     //end code here
 
