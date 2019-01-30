@@ -80,7 +80,6 @@ exports.uniquifyArray = function () {
     return result
 }
 
-
 // /*
 //     Bonus Quest
 // In the 20×20 grid below; What is the greatest sum of element of the array?
