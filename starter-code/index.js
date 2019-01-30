@@ -6,7 +6,6 @@
     Find word with the longest characters
 */
 
-
   
 exports.longestWord = function(){
     let words = [ "mystery", "brother",
