@@ -17,7 +17,21 @@ exports.longestWord = function(){
     let result 
     //write your code here
 
-
+    let arr=[]
+    let arr2=[]
+    length=0
+    for (i=0; i<words.length;i++){
+    
+    arr=words[i].split("")
+    // console.log(arr)
+    length=arr.length
+    // console.log(length)
+    arr2.push(length+words[i])
+    // console.log(arr2)
+    }
+    // console.log(arr2.sort())
+    arr2.sort()
+    result=arr2.slice(-1)
 
     return result
 }
@@ -35,8 +49,12 @@ Calculate the product of the following array:
 exports.productArray = function(){
     var numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
     //write code here
-
-
+    var result=1
+    numbers.forEach(function(el){
+        result*=el
+        return result
+    })
+    
     //end code here
     return result
 }
@@ -62,9 +80,23 @@ exports.averageWords = function(){
         "palace"
     ];
 
-    let result = 0
+    let result = 0.0
     //write codes here
+    
+    var newArr = []
+    for (i = 0; i < words.length; i++) {
 
+        newArr.push(words[i].length)
+    }
+
+    sum = 0
+    newArr.forEach(function (el) {
+        sum += el
+        return sum
+    })
+
+    result = sum / newArr.length
+    
 
     //end code here
     return result
@@ -104,6 +136,13 @@ exports.uniquifyArray = function(){
         "bring"
       ];
     // Your code here
+    var result=[]
+for(var i=0 ; i<words.length; i++){
+if(result.indexOf(words[i])==-1){
+  result.push(words[i])
+}
+}
+
 
     return result
   }
