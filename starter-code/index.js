@@ -6,17 +6,8 @@
     Find word with the longest characters
 
 */
-
-
-  
-exports.longestWord = function(){
-    let words = [ "mystery", "brother",
-        "aviator", "crocodile",
-        "pearl","orchard", "crackpot"
-        ];
-
-    let result 
 /* 
+    #1
 var longest;
         for(let i=0 ; i< arr.length;i++){
             if(arr[i].length > lg){
@@ -42,18 +33,54 @@ var longest;
         }
         retutn longest ;
     }
+
+    #3
+      words.forEach(function(el){
+
+        if(el.length > longest){
+
+            longest = el.length;
+         }
+        });
+
+    result = words.filter(function(el){
+
+        return el.length === longest
+    })
+    
 */
+
+  
+exports.longestWord = function(){
+    let words = [ "mystery", "brother",
+        "aviator", "crocodile",
+        "pearl","orchard", "crackpot"
+        ];
+
+    let result 
     //write your code here
-    var longest;
-        for(let i=0 ; i< arr.length;i++){
-            if(arr[i].length > lg){
-                lg = arr[i].length;
-                longest = arr[i];
-            }
+    let longest = 0;
+
+
+
+    words.forEach(function(el){
+
+        if(el.length > longest){
+
+            longest = el.length;
+
         }
-        return longest;
-    
-    
+
+    });
+
+
+
+    result = words.filter(function(el){
+
+        return el.length === longest
+
+    })
+
    
     return result
 
@@ -103,12 +130,13 @@ exports.averageWords = function(){
     ];
 
     let result = 0
-    //write codes here
-let x = words.split('').join('');
-for (x[i]=0; x<words.length; x[i]++){
-    sum += x
-}
-   var result= sum / words.length
+    //write codes her
+    let average = 0;
+    words.forEach(function(ele){
+    average += ele.length;
+    })
+
+    result = (average) / (words.length)
 
     //end code here
     return result
@@ -191,13 +219,24 @@ var matrix = [
 
     //code here
 let result =0
+/*
 matrix.forEach(function(el){
     el.forEach(function(ele){
         result += ele
     })
 })
-
-
+*/
+let greatest = 0;
+matrix.forEach(function (elem) {
+    let sum =0;
+  elem.forEach(function (eleme) {
+    sum += eleme;
+  })
+  if (sum > greatest) {
+      greatest = sum;
+  }
+})
+result = greatest;
     //end code here
 
     return result
