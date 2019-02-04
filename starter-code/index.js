@@ -8,20 +8,34 @@
 
 
   
+
 exports.longestWord = function(){
+
     let words = [ "mystery", "brother",
+
         "aviator", "crocodile",
         "pearl","orchard", "crackpot"
         ];
 
     let result 
-    //write your code here
 
+    //write your code here   
+        var cur_max = words[0].length;
+        var long_word = words[0];
+  
+        for (i = 0; i < words.length; i++) {
+            if (words[i].length >= cur_max) {
+                cur_max = words[i].length;
+                long_word = words[i];
+            }
+        }
+        return long_word;
+    }
 
+    console.log(LongestWord(words));
 
     return result
 }
-
 
 
 /*
@@ -34,9 +48,11 @@ Calculate the product of the following array:
 */
 exports.productArray = function(){
     var numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
-    //write code here
-
-
+    //write code her
+    const array1 = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
+    const reducer = (accumulator, currentValue) => accumulator + currentValue;
+    console.log(array1.reduce(reducer));
+    console.log(array1.reduce(reducer, 18));
     //end code here
     return result
 }
@@ -64,11 +80,20 @@ exports.averageWords = function(){
 
     let result = 0
     //write codes here
+    var totalLength = 0;
+    var avgLength = 0;
+    for(i = 0; i < words.length; i++) {
+        totalLength += words[i].length;
+    }
+    avgLength = totalLength / wordsArray.length;
 
+    return avgLength;
+};
+console.log(averageWordLength(wordsArray));
 
     //end code here
-    return result
-}
+    //return result
+
 
 /*
 
@@ -89,7 +114,7 @@ var words = [
 ];
 
 */
-exports.uniquifyArray = function(){
+exports.uniquifyArray = function(words){
     let words = [
         "crab",
         "poison",
@@ -104,9 +129,16 @@ exports.uniquifyArray = function(){
         "bring"
       ];
     // Your code here
+    var newArray = [];
+    for (var i = 0; i < array.length; i++) {
 
-    return result
-  }
+      if (newArray.indexOf(array[i]) == -1) {
+        newArray.push(array[i])
+      }
+    }
+return newArray;
+}
+console.log(uniquifyArray(wordsUnique));
 
 //EXTRA WORK
 /*
@@ -144,5 +176,5 @@ var matrix = [
 
     //end code here
 
-    return result
+return result
 }
