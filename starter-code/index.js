@@ -5,8 +5,6 @@
 /*
     Find word with the longest characters
 */
-
-
   
 exports.longestWord = function(){
     let words = [ "mystery", "brother",
@@ -16,9 +14,20 @@ exports.longestWord = function(){
 
     let result 
     //write your code here
+ 
+    
+    
 
+    let longestWord = 0
 
+     longestWord = words.reduce(function(longest, currentWord) {
+    if(currentWord.length > longest.length)
+       return currentWord;
+    else
+       return longest;
+  }, "");
 
+   result = longestWord
     return result
 }
 
@@ -36,7 +45,23 @@ exports.productArray = function(){
     var numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
     //write code here
 
+    
+    product = 1;
+    
 
+    for (let i = 0; i < numbers.length; i += 1) 
+   {
+
+    product *= numbers[i];
+    
+    
+}
+
+    
+     //  console.log( "Product :  " + product);
+      
+ 
+     result = product
     //end code here
     return result
 }
@@ -62,10 +87,17 @@ exports.averageWords = function(){
         "palace"
     ];
 
-    let result = 0
+    let result 
     //write codes here
 
-
+    let sum = 0;
+    let avg = 0;
+      for(let i = 0; i < words.length; i++){
+       sum += words[i].length;
+}
+   
+    avg = sum/words.length
+    result = avg
     //end code here
     return result
 }
@@ -104,7 +136,11 @@ exports.uniquifyArray = function(){
         "bring"
       ];
     // Your code here
-
+    
+    let unique_array = words.filter(function(elem, index, self) {
+        return index == self.indexOf(elem);
+    });
+    result =  unique_array
     return result
   }
 
@@ -139,8 +175,14 @@ var matrix = [
 ];
 
     //code here
-
-
+    let sum =0;
+for(let i= 0; i< matrix.length; i++){
+  for(let j = 0; j< i; j++){
+    sum += matrix[j].length
+  }
+}
+//console.log(sum)
+   result = sum;  
 
     //end code here
 
