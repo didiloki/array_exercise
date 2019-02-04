@@ -14,12 +14,13 @@ exports.longestWord = function(){
         "pearl","orchard", "crackpot"
         ];
 
-    let result 
     //write your code here
+    let result= words.sort(function(a, b){
+        return b.length - a.length;
+    });
 
-
-
-    return result
+    result=result[0];
+    return result;
 }
 
 
@@ -35,8 +36,10 @@ Calculate the product of the following array:
 exports.productArray = function(){
     var numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
     //write code here
-
-
+    let result = 1
+    numbers.forEach(function(el){
+      result*= el
+    })
     //end code here
     return result
 }
@@ -65,6 +68,19 @@ exports.averageWords = function(){
     let result = 0
     //write codes here
 
+    let wordsLength = words.map(function(el){
+    return el= el.length
+    });
+    //console.log(wordsLength);
+
+    let sum = 0
+    wordsLength.forEach(function(el){
+        sum += el
+        return sum
+    })
+    //console.log(sum)
+    result = sum / words.length;
+    //console.log(result)
 
     //end code here
     return result
@@ -104,7 +120,14 @@ exports.uniquifyArray = function(){
         "bring"
       ];
     // Your code here
+    
+    let result= []
 
+    for(let i=0; i<words.length; i= i+1){
+        if(result.indexOf(words[i]) === -1){
+          result.push(words[i])
+        }
+      }
     return result
   }
 
@@ -140,7 +163,23 @@ var matrix = [
 
     //code here
 
-
+    let result= [] 
+    let matrix2= []
+    
+    matrix.forEach(function(el){
+      let sum=0
+      el.forEach(function(ele){
+        sum= sum + ele
+      })
+      matrix2.push(sum)
+      return matrix2
+    })
+    
+    matrix2.sort(function(a, b){
+      return b-a
+    })
+    
+    result = matrix2[0]
 
     //end code here
 
