@@ -4,8 +4,51 @@
 
 /*
     Find word with the longest characters
-*/
 
+*/
+/* 
+    #1
+var longest;
+        for(let i=0 ; i< arr.length;i++){
+            if(arr[i].length > lg){
+                lg = arr[i].length;
+                longest = arr[i];
+            }
+        }
+        return longest;
+    }
+    longestString(words);
+
+
+    # 2 
+    function logestword(str){
+        var word = str.split(" ");
+        var longest= "";
+
+        for (var word of words){
+            if (word.length>longest.length){
+                longest = word;
+            }
+
+        }
+        retutn longest ;
+    }
+
+    #3
+      words.forEach(function(el){
+
+        if(el.length > longest){
+
+            longest = el.length;
+         }
+        });
+
+    result = words.filter(function(el){
+
+        return el.length === longest
+    })
+    
+*/
 
   
 exports.longestWord = function(){
@@ -16,10 +59,31 @@ exports.longestWord = function(){
 
     let result 
     //write your code here
+    let longest = 0;
 
 
 
+    words.forEach(function(el){
+
+        if(el.length > longest){
+
+            longest = el.length;
+
+        }
+
+    });
+
+
+
+    result = words.filter(function(el){
+
+        return el.length === longest
+
+    })
+
+   
     return result
+
 }
 
 
@@ -35,8 +99,11 @@ Calculate the product of the following array:
 exports.productArray = function(){
     var numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
     //write code here
-
-
+    result = numbers.reduce(function (a, b) {
+        return a * b;
+    }, 1);
+    
+    console.log(result)
     //end code here
     return result
 }
@@ -63,8 +130,13 @@ exports.averageWords = function(){
     ];
 
     let result = 0
-    //write codes here
+    //write codes her
+    let average = 0;
+    words.forEach(function(ele){
+    average += ele.length;
+    })
 
+    result = (average) / (words.length)
 
     //end code here
     return result
@@ -104,7 +176,14 @@ exports.uniquifyArray = function(){
         "bring"
       ];
     // Your code here
-
+    let result = [];
+    let el =  words.length;
+  for (let i =0 ; i < el; i++)
+    if(result.indexOf(words[i]) === -1){
+    result.push(words[i]);
+    }
+  
+  console.log(result)
     return result
   }
 
@@ -139,9 +218,25 @@ var matrix = [
 ];
 
     //code here
-
-
-
+let result =0
+/*
+matrix.forEach(function(el){
+    el.forEach(function(ele){
+        result += ele
+    })
+})
+*/
+let greatest = 0;
+matrix.forEach(function (elem) {
+    let sum =0;
+  elem.forEach(function (eleme) {
+    sum += eleme;
+  })
+  if (sum > greatest) {
+      greatest = sum;
+  }
+})
+result = greatest;
     //end code here
 
     return result
