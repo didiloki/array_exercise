@@ -18,9 +18,22 @@ exports.longestWord = function(){
     //write your code here
 
 
+    //  }
+    
+        
+   var longestWord = " ";
+   // Step 3. Create the FOR loop
+   for(var i = 0; i < words.length; i++){
+     if(words[i].length > longestWord.length){
+     longestWord = words[i]; 
+     
+     }
+      
+   }
+ 
+    return  longestWord;// completed 
+    }
 
-    return result
-}
 
 
 
@@ -36,9 +49,15 @@ exports.productArray = function(){
     var numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
     //write code here
 
-
+    let Multi = 1
+    numbers.forEach(function(el){ //loops through outer array
+        // console.log(el)
+        Multi *= el
+    })
+    
+    //console.log(Multi)
     //end code here
-    return result
+    return Multi  //DONE
 }
 
 
@@ -64,6 +83,9 @@ exports.averageWords = function(){
 
     let result = 0
     //write codes here
+    arrayLength = words.length,
+    joined = words.join(''),
+    result = joined.length / arrayLength;
 
 
     //end code here
@@ -104,8 +126,15 @@ exports.uniquifyArray = function(){
         "bring"
       ];
     // Your code here
+    
+var filteredArr = words.filter(function(item, index) {
+  if (words.indexOf(item) == index)
+    return item;
+});
 
-    return result
+//console.log('Filtered Array: ' + filteredArr);
+
+    return filteredArr; //DONE
   }
 
 //EXTRA WORK
@@ -139,10 +168,23 @@ var matrix = [
 ];
 
     //code here
-
+    var sumall = matrix.map(mySumFunction);
+    // define a Function to sum each group 
+    function mySumFunction(value, index, array) {
+     return value.reduce(function(a,b){
+        return a + b  }, 0);}
+     
+    console.log(' Sum of every element of the array '+ sumall);
+     // Max of Array
+     var len = matrix.length
+     
+     // Max of Array
+    function myArrayMax(arr) {return Math.max.apply(null, arr);}
+    
+    //console.log(" the greatest sum " +myArrayMax(sumall));
 
 
     //end code here
 
-    return result
+    return myArrayMax(sumall)
 }
