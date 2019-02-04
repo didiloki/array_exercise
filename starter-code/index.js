@@ -120,7 +120,14 @@ exports.uniquifyArray = function(){
         "bring"
       ];
     // Your code here
+    
+    let result= []
 
+    for(let i=0; i<words.length; i= i+1){
+        if(result.indexOf(words[i]) === -1){
+          result.push(words[i])
+        }
+      }
     return result
   }
 
@@ -156,7 +163,23 @@ var matrix = [
 
     //code here
 
-
+    let result= [] 
+    let matrix2= []
+    
+    matrix.forEach(function(el){
+      let sum=0
+      el.forEach(function(ele){
+        sum= sum + ele
+      })
+      matrix2.push(sum)
+      return matrix2
+    })
+    
+    matrix2.sort(function(a, b){
+      return b-a
+    })
+    
+    result = matrix2[0]
 
     //end code here
 
