@@ -13,11 +13,14 @@ exports.longestWord = function(){
         "aviator", "crocodile",
         "pearl","orchard", "crackpot"
         ];
+        
 
-    let result 
-    //write your code here
-
-
+    let result = "";
+    for (var word of words){
+        if (word.length > result.length){
+          result = word
+        }
+    }
 
     return result
 }
@@ -34,10 +37,10 @@ Calculate the product of the following array:
 */
 exports.productArray = function(){
     var numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
-    //write code here
-
-
-    //end code here
+    var result=1;
+    for(i=0 ; i<numbers.length ; i++ ){
+        result *= numbers[i]
+    }
     return result
 }
 
@@ -62,13 +65,27 @@ exports.averageWords = function(){
         "palace"
     ];
 
-    let result = 0
-    //write codes here
+//     var total=0;
+// result = 0;
+// for(i=0 ; i<words.length ; i++){
+//     split_word = words[i].split("");
+// total += split_word.length
+// result = total / words.length
 
-
-    //end code here
+// }
+    var result
+    var total = 0;
+    words.forEach(function(currentValue, index , array) {
+        let new_arr = currentValue.split("");
+        
+        total += new_arr.length
+        result = total / words.length
+    })
     return result
 }
+
+
+
 
 /*
 
@@ -104,10 +121,40 @@ exports.uniquifyArray = function(){
         "bring"
       ];
     // Your code here
+    var new_arr = [];
+    words.forEach(function(currentValue,index,array){
+        console.log(currentValue)
+      if(new_arr.indexOf(currentValue) == -1){
+          new_arr.push(currentValue)
+          console.log(new_arr)
+      } 
+      
+      })
 
-    return result
-  }
+      result = new_arr;
+// result = [];
+//       var new_array = [];
+//       new_array = new Set(words);
+//       var result = new_array
+//       return result;
+//   }
 
+// result = [];
+//   new_arr = [];
+// words.forEach(function(currentValue,index,array){
+   
+//    if(new_word = currentValue ){
+//        new_arr.push(currentValue)
+//    }
+// })
+// new_arr.forEach(function(currentValue,index,array){
+//     if(currentValue = currentValue){
+//         new_arr.pop(currentValue);
+//     }
+// })
+// result = new_arr;
+return result
+}
 //EXTRA WORK
 /*
     Bonus Quest
@@ -139,7 +186,28 @@ var matrix = [
 ];
 
     //code here
-
+    var compare = [];
+    var limit = 0;
+    matrix.forEach(function(currentValue,index,array){
+       let test_array = currentValue;
+       let x = 0
+       if(x < currentValue.length){
+       test_array.forEach(function(currentValue5,index5,array5){
+               limit += currentValue5;
+               arr_value = limit
+               x++ 
+           })
+           limit = 0
+           //console.log(arr_value)
+        }
+        compare.push(arr_value);  
+       })
+       let result = [];
+       compare.forEach(function(currentValue,index,array){
+           if(currentValue > result){
+               result = currentValue
+           }
+       })
 
 
     //end code here
