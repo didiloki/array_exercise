@@ -14,15 +14,18 @@ exports.longestWord = function(){
         "pearl","orchard", "crackpot"
         ];
 
-    let result 
-    //write your code here
-
-
-
-    return result
-}
-
-
+        let result = "";
+        //write your code here
+        var largest = 0;
+        for (var i = 0; i < words.length; i++) {
+            if (words[i].length > largest) {
+                largest = words[i].length;
+                result = words[i];
+            }
+        }
+        return result
+        }
+        console.log(exports.longestWord);
 
 /*
 Calculating the product is as simple as iterating over an array and adding each of the elements together.
@@ -35,12 +38,11 @@ Calculate the product of the following array:
 exports.productArray = function(){
     var numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
     //write code here
-
-
+    let result = numbers.reduce((accumulator, currentValue) => accumulator * currentValue);
+    // console.log(result));
     //end code here
     return result
 }
-
 
 /*
 Array of Strings
@@ -64,8 +66,8 @@ exports.averageWords = function(){
 
     let result = 0
     //write codes here
-
-
+    result = words.join("").length / words.length
+    console.log(result)
     //end code here
     return result
 }
@@ -104,8 +106,13 @@ exports.uniquifyArray = function(){
         "bring"
       ];
     // Your code here
-
-    return result
+    let result = words.reduce(function (accumulator, currentValue) {
+        if (accumulator.indexOf(currentValue) === -1) {
+          accumulator.push(currentValue);
+        }
+        return accumulator
+      }, [])
+      return result
   }
 
 //EXTRA WORK
