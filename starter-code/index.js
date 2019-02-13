@@ -5,8 +5,7 @@
 /*
     Find word with the longest characters
 */
-
-
+ 
   
 exports.longestWord = function(){
     let words = [ "mystery", "brother",
@@ -14,14 +13,23 @@ exports.longestWord = function(){
         "pearl","orchard", "crackpot"
         ];
 
-    let result 
-    //write your code here
-
-
-
+    
+        let result ="";
+        let longest = 0;
+        let lenght1 = ""
+        //write your code here
+    for (var i = 0; i < words.length; i++){
+    if (longest < words[i].length) {
+        longest = words[i].length;
+        lenght1= words[i];
+        
+        
+    }
+    result = lenght1
+        
+    }
     return result
 }
-
 
 
 /*
@@ -35,12 +43,14 @@ Calculate the product of the following array:
 exports.productArray = function(){
     var numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
     //write code here
-
-
+    var p = 1;
+for (var i = 0; i < numbers.length; i++) {
+    p = numbers[i] * p;
+}
+    result = p;
     //end code here
     return result
 }
-
 
 /*
 Array of Strings
@@ -63,7 +73,15 @@ exports.averageWords = function(){
     ];
 
     let result = 0
+    var word = 0
     //write codes here
+    for (var i = 0; i < words.length; i++) {
+        word += words[i].length;
+
+
+    }
+    
+    result = word / words.length;
 
 
     //end code here
@@ -105,6 +123,14 @@ exports.uniquifyArray = function(){
       ];
     // Your code here
 
+    let wordsb =[];
+for ( var i = 0; i < words.length; i++) {
+    if(wordsb.indexOf(words[i]) < 0) {
+        wordsb.push(words[i])
+    }
+    
+}
+    result = wordsb
     return result
   }
 
@@ -139,10 +165,19 @@ var matrix = [
 ];
 
     //code here
+    var sum =0;
+for (var i = 0; i < matrix.length; i++) {
+    for (var j = 0; j < matrix[i].length; j++) {
+        sum += matrix[i][j];
 
+    }
+    
 
+}
+    result = sum
 
     //end code here
 
     return result
 }
+    //end code here
